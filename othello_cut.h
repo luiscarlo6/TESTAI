@@ -211,8 +211,8 @@ inline bool state_t::outflank(bool color, int pos) const {
         if( (p > x + 1) && (*p != -1) && !is_free(*p) ) return true;
     }
     if( x != dia1[pos - 4] ) {
-        for( p = x - 1; (p >= rows[pos - 4]) && !is_free(*p) && (color ^ is_black(*p)); --p );
-        if( (p < x - 1) && (p >= rows[pos - 4]) && !is_free(*p) ) return true;
+        for( p = x - 1; (p >= dia1[pos - 4]) && !is_free(*p) && (color ^ is_black(*p)); --p );
+        if( (p < x - 1) && (p >= dia1[pos - 4]) && !is_free(*p) ) return true;
     }
 
     // Check Diag2
@@ -223,8 +223,8 @@ inline bool state_t::outflank(bool color, int pos) const {
         if( (p > x + 1) && (*p != -1) && !is_free(*p) ) return true;
     }
     if( x != dia2[pos - 4] ) {
-        for( p = x - 1; (p >= rows[pos - 4]) && !is_free(*p) && (color ^ is_black(*p)); --p );
-        if( (p < x - 1) && (p >= rows[pos - 4]) && !is_free(*p) ) return true;
+        for( p = x - 1; (p >= dia2[pos - 4]) && !is_free(*p) && (color ^ is_black(*p)); --p );
+        if( (p < x - 1) && (p >= dia2[pos - 4]) && !is_free(*p) ) return true;
     }
 
 
