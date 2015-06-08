@@ -29,22 +29,27 @@ int expandidos = 0;
 
 int negamax(state_t s, int depth, bool color){
     int player = color ? 1 : -1;
-
+    //s.terminal() ? cout << "si es terminal" : cout << "nope";
     if(s.terminal())
         return player * s.value();
 
     int bestValue = INT_MIN;
     int value;
     std::vector<int> childNodes = s.get_children(color);
+    //cout << "Size c: " << childNodes.size();
 
     if(childNodes.size() <= 0)
         return -negamax(s, depth - 1, !color);
     else
     {
         expandidos++;
-        for(int i = 0; i < childNodes.size(); ++i)
+        for(int i = 0; i < childNodes.size(); i++)
         {
             state_t new_s = s.move(color, childNodes[i]);
+
+            //cout << "depth: " << depth;
+            //s.terminal() ? cout << "si es terminal" : cout << "nope";
+            //s.print(cout, depth);
             value = -negamax(new_s, depth - 1, !color);
             evaluados++;
             bestValue = MAX(bestValue, value);
@@ -52,6 +57,50 @@ int negamax(state_t s, int depth, bool color){
     }
 
     return bestValue;
+}
+
+/* max = color, if !max then its min */
+int test(state_t s, int depth, int value, bool color){
+    if(depth == 0 || s.terminal()) return s.value() > value;
+
+    std::vector<int> childNodes = s.get_children(color);
+
+    if(childNodes.size() <= 0)
+        return color;
+
+    else{
+        bool t;
+        for(int i = 0; i < childNodes.size(); i++){
+            state_t new_s = s.move(color, childNodes[i]);
+            t = test(new_s, depth - 1, value, !color);
+            if(color && t) return true;
+            
+            if(!color && !t) return false;
+
+            return color ? true : false;
+        }
+    }
+
+}
+
+int scout(state_t s, int depth, bool color){
+    if(depth == 0 || s.terminal()) return s.value();
+
+    int score = 0;
+    std::vector<int> childNodes = s.get_children(color);
+
+    for(int i = 0; i < childNodes.size(); i++){
+        state_t new_s = s.move(color, childNodes[i]);
+        if(childNodes[i] == childNodes[0]) 
+            score = scout(new_s, depth -1, !color);
+        else{
+            if(color && test(new_s, depth - 1, score, true)) 
+                score = scout(new_s, depth - 1, !color);
+            if(!color && test(new_s, depth - 1, score, false))
+                score = scout(new_s, depth - 1, !color);
+        }
+    }
+    return score;
 }
 
 int help(){
@@ -94,12 +143,16 @@ int main(int argc, const char **argv) {
 
         switch(alg){
             case(1)://Negamax
-                result = seed * negamax(state, depth, player);
+                //result = seed * negamax(state, depth, player);
+                result = seed * negamax(state, 33 - depth, player);
                 cout << "Resultado de Negamax: " << result << "\nEvaluados: " << evaluados<< "\nExpandidos: " << expandidos<< endl;
+                //cout << "Resultado de Negamax: " << result << endl;
                 break;
             case(2):
                 break;
             case(3):
+                result = scout(state, 33 - depth, player);
+                cout << "Resultado de scout: " << result << endl;
                 break;
             case(4):
                 break;
