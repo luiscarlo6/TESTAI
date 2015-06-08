@@ -21,16 +21,17 @@
 #include "othello_cut.h" // won't work correctly until .h is fixed!
 #include <iostream>
 #include <climits>
+#include <stdint.h>
 
 using namespace std;
 
-int evaluados = 0;
-int expandidos = 0;
+uint64_t evaluados = 0;
+uint64_t expandidos = 0;
 
 int negamax(state_t s, int depth, bool color){
     int player = color ? 1 : -1;
     //s.terminal() ? cout << "si es terminal" : cout << "nope";
-    if(s.terminal())
+    if(depth == 0 || s.terminal())
         return player * s.value();
 
     int bestValue = INT_MIN;
@@ -130,7 +131,7 @@ int main(int argc, const char **argv) {
         }
 
 
-        for (int i = 0; i < depth; ++i)
+        for (int i = 0; i < 33 - depth; ++i)
         {
             player = i % 2 == 0; // black moves first!
             int pos = PV[i];
@@ -144,7 +145,7 @@ int main(int argc, const char **argv) {
         switch(alg){
             case(1)://Negamax
                 //result = seed * negamax(state, depth, player);
-                result = seed * negamax(state, 33 - depth, player);
+                result = seed * negamax(state, depth, player);
                 cout << "Resultado de Negamax: " << result << "\nEvaluados: " << evaluados<< "\nExpandidos: " << expandidos<< endl;
                 //cout << "Resultado de Negamax: " << result << endl;
                 break;

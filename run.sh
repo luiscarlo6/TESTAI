@@ -1,9 +1,9 @@
 #!/bin/sh
-a=0
+a=1
 
 while [ $a -lt $2 ]
 do
-	echo ./main 1 `expr 33 - $a `
-	time ./main 1 `expr 33 - $a `
+	echo ./main $1 $a
+	timeout 900 time ./main 1 $a
     a=`expr $a + 1`
 done
