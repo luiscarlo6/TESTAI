@@ -20,38 +20,88 @@
 
 #include "othello_cut.h" // won't work correctly until .h is fixed!
 #include <iostream>
+#include <climits>
 
 using namespace std;
 
+int negamax(state_t s, int depth, bool color){
+    int player = color ? 1 : -1;
+
+    if(s.terminal())
+        return player * s.value();
+
+    int bestValue = INT_MIN;
+    int value;
+    std::vector<int> childNodes = s.get_children(color);
+
+    if(childNodes.size() <= 0)
+        return -negamax(s, depth - 1, !color);
+    else
+    {
+        for(int i = 0; i < childNodes.size(); ++i)
+        {
+            state_t new_s = s.move(color, childNodes[i]);
+            value = -negamax(new_s, depth - 1, !color);
+            bestValue = MAX(bestValue, value);
+        }
+    }
+
+    return bestValue;
+}
+
+int help(){
+    cout << "Número invalido de argumentos o argumentos incorrectos, por favor ejecute de la forma: ";
+    cout << "./main <Algoritmo> <Profundidad>" << endl;
+    cout << "Algoritmo:\n1. Negamax\n2. Negamax con poda alpha-beta\n3. Scout\n4. Negascout"<<endl;
+    cout << "Profundidad: Número entre 1-33"<<endl;
+    return 0;
+}
+
 int main(int argc, const char **argv) {
     state_t state;
-    cout << "Principal variation:" << endl;
-    for( int i = 0; PV[i] != -1; ++i ) {
-        bool player = i % 2 == 0; // black moves first!
-        int pos = PV[i];
-        cout << state;
-        cout << (player ? "Black" : "White")
-             << " moves at pos = " << pos << (pos == 36 ? " (pass)" : "")
-             << endl;
-        state = state.move(player, pos);
-        cout << "Board after " << i+1 << (i == 0 ? " ply:" : " plies:") << endl;
-    }
-    cout << state;
-    cout << "Value of the game = " << state.value() << endl;
-    cout << "#bits per state = " << sizeof(state) * 8 << endl;
+    int color = -2;
+    int alg;
+    int depth;
+    int result = 0;
+    int seed = 0;
+    bool player;
 
-    if( argc > 1 ) {
-        int n = atoi(argv[1]);
-        cout << endl << "Apply " << n << " random movements at empty board:";
-        state = state_t();
-        for( int i = 0; i < n; ++i ) {
-            bool player = i % 2 == 0; // black moves first
-            int pos = state.get_random_move(player);
-            state = state.move(player, pos);
-            cout << " " << pos;
+    if (argc == 3){
+        alg = atoi(argv[1]);
+        depth = atoi(argv[2]);
+        if (!(alg>0 && alg<5) || !(depth>0 && depth<34)){
+            help();
+            return -1;
         }
-        cout << endl << state;
-    }
 
+
+        for (int i = 0; i < depth; ++i)
+        {
+            player = i % 2 == 0; // black moves first!
+            int pos = PV[i];
+            state = state.move(player, pos);
+        }
+
+
+        player = !player;
+        seed = player ? 1 : -1;
+
+        switch(alg){
+            case(1)://Negamax
+                result = seed * negamax(state, depth, player);
+                cout << "Resultado de Negamax: " << result << endl;
+                break;
+            case(2):
+                break;
+            case(3):
+                break;
+            case(4):
+                break;
+        }
+
+
+        
+    }else
+        help();
     return 0;
 }
