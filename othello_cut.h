@@ -190,12 +190,12 @@ inline bool state_t::outflank(bool color, int pos) const {
 
     // Check columns
     x = cols[pos - 4];
-    std::cout << "La x: " << *(x) << " , pos: " << pos << " , color: " << color <<  " , free: " << is_free(*x);
+    //std::cout << "La x: " << *(x) << " , pos: " << pos << " , color: " << color <<  " , free: " << is_free(*x);
     while( *x != pos ) ++x;
-    std::cout << " la x2:" << *x;
+    //std::cout << " la x2:" << *x;
     if( *(x+1) != -1 ) {
         for( p = x + 1; (*p != -1) && !is_free(*p) && (color ^ is_black(*p)); ++p );
-        std::cout << " la x3:" << *x;
+        //std::cout << " la x3:" << *x;
         if( (p > x + 1) && (*p != -1) && !is_free(*p) ) return true;
     }
     if( x != cols[pos - 4] ) {
@@ -205,7 +205,7 @@ inline bool state_t::outflank(bool color, int pos) const {
 
     // Check Diag1
     x = dia1[pos - 4];
-    while( *x != pos ){ ++x; std::cout << " la x del diag:" << *x;}
+    //while( *x != pos ){ ++x; std::cout << " la x del diag:" << *x;}
     if( *(x+1) != -1 ) {
         for( p = x + 1; (*p != -1) && !is_free(*p) && (color ^ is_black(*p)); ++p );
         if( (p > x + 1) && (*p != -1) && !is_free(*p) ) return true;
