@@ -24,6 +24,9 @@
 
 using namespace std;
 
+int evaluados = 0;
+int expandidos = 0;
+
 int negamax(state_t s, int depth, bool color){
     int player = color ? 1 : -1;
 
@@ -38,10 +41,12 @@ int negamax(state_t s, int depth, bool color){
         return -negamax(s, depth - 1, !color);
     else
     {
+        expandidos++;
         for(int i = 0; i < childNodes.size(); ++i)
         {
             state_t new_s = s.move(color, childNodes[i]);
             value = -negamax(new_s, depth - 1, !color);
+            evaluados++;
             bestValue = MAX(bestValue, value);
         }
     }
@@ -66,6 +71,7 @@ int main(int argc, const char **argv) {
     int seed = 0;
     bool player;
 
+
     if (argc == 3){
         alg = atoi(argv[1]);
         depth = atoi(argv[2]);
@@ -89,7 +95,7 @@ int main(int argc, const char **argv) {
         switch(alg){
             case(1)://Negamax
                 result = seed * negamax(state, depth, player);
-                cout << "Resultado de Negamax: " << result << endl;
+                cout << "Resultado de Negamax: " << result << "\nEvaluados: " << evaluados<< "\nExpandidos: " << expandidos<< endl;
                 break;
             case(2):
                 break;
