@@ -1,0 +1,127 @@
+luiscarlo@Felurian:~/ia$ ./run.sh 4 33
+./main 4 1
+Resultado de nega scout: -4
+Evaluados: 1
+Expandidos: 1
+0.00user 0.00system 0:00.00elapsed 0%CPU (0avgtext+0avgdata 2532maxresident)k
+0inputs+0outputs (0major+110minor)pagefaults 0swaps
+./main 4 2
+Resultado de nega scout: -4
+Evaluados: 4
+Expandidos: 3
+0.00user 0.00system 0:00.00elapsed 0%CPU (0avgtext+0avgdata 2628maxresident)k
+0inputs+0outputs (0major+111minor)pagefaults 0swaps
+./main 4 3
+Resultado de nega scout: -4
+Evaluados: 2
+Expandidos: 2
+0.00user 0.00system 0:00.00elapsed 0%CPU (0avgtext+0avgdata 2628maxresident)k
+0inputs+0outputs (0major+111minor)pagefaults 0swaps
+./main 4 4
+Resultado de nega scout: -4
+Evaluados: 13
+Expandidos: 9
+0.00user 0.00system 0:00.00elapsed 0%CPU (0avgtext+0avgdata 2692maxresident)k
+0inputs+0outputs (0major+110minor)pagefaults 0swaps
+./main 4 5
+Resultado de nega scout: 12
+Evaluados: 6
+Expandidos: 5
+0.00user 0.00system 0:00.00elapsed 0%CPU (0avgtext+0avgdata 2600maxresident)k
+0inputs+0outputs (0major+111minor)pagefaults 0swaps
+./main 4 6
+Resultado de nega scout: -4
+Evaluados: 60
+Expandidos: 43
+0.00user 0.00system 0:00.00elapsed 0%CPU (0avgtext+0avgdata 2600maxresident)k
+0inputs+0outputs (0major+110minor)pagefaults 0swaps
+./main 4 7
+Resultado de nega scout: 12
+Evaluados: 8
+Expandidos: 7
+0.00user 0.00system 0:00.00elapsed 0%CPU (0avgtext+0avgdata 2716maxresident)k
+0inputs+0outputs (0major+111minor)pagefaults 0swaps
+./main 4 8
+Resultado de nega scout: -4
+Evaluados: 306
+Expandidos: 221
+0.00user 0.00system 0:00.00elapsed 0%CPU (0avgtext+0avgdata 2688maxresident)k
+0inputs+0outputs (0major+111minor)pagefaults 0swaps
+./main 4 9
+Resultado de nega scout: 2
+Evaluados: 392
+Expandidos: 287
+0.00user 0.00system 0:00.00elapsed 0%CPU (0avgtext+0avgdata 2688maxresident)k
+0inputs+0outputs (0major+111minor)pagefaults 0swaps
+./main 4 10
+Resultado de nega scout: 2
+Evaluados: 1442
+Expandidos: 1046
+0.00user 0.00system 0:00.00elapsed 100%CPU (0avgtext+0avgdata 2660maxresident)k
+0inputs+0outputs (0major+108minor)pagefaults 0swaps
+./main 4 11
+Resultado de nega scout: 4
+Evaluados: 2770
+Expandidos: 1990
+0.00user 0.00system 0:00.00elapsed 100%CPU (0avgtext+0avgdata 2668maxresident)k
+0inputs+0outputs (0major+110minor)pagefaults 0swaps
+./main 4 12
+Resultado de nega scout: 4
+Evaluados: 33348
+Expandidos: 24230
+0.06user 0.00system 0:00.06elapsed 95%CPU (0avgtext+0avgdata 2644maxresident)k
+0inputs+0outputs (0major+110minor)pagefaults 0swaps
+./main 4 13
+Resultado de nega scout: 6
+Evaluados: 59266
+Expandidos: 42273
+0.12user 0.00system 0:00.12elapsed 99%CPU (0avgtext+0avgdata 2616maxresident)k
+0inputs+0outputs (0major+108minor)pagefaults 0swaps
+./main 4 14
+Resultado de nega scout: -12
+Evaluados: 205384
+Expandidos: 147301
+0.42user 0.00system 0:00.42elapsed 99%CPU (0avgtext+0avgdata 2692maxresident)k
+0inputs+0outputs (0major+111minor)pagefaults 0swaps
+./main 4 15
+Resultado de nega scout: 10
+Evaluados: 442577
+Expandidos: 310232
+0.89user 0.00system 0:00.89elapsed 100%CPU (0avgtext+0avgdata 2616maxresident)k
+0inputs+0outputs (0major+111minor)pagefaults 0swaps
+./main 4 16
+Resultado de nega scout: 0
+Evaluados: 2197224
+Expandidos: 1569103
+4.55user 0.00system 0:04.55elapsed 100%CPU (0avgtext+0avgdata 2628maxresident)k
+0inputs+0outputs (0major+111minor)pagefaults 0swaps
+./main 4 17
+Resultado de nega scout: 2
+Evaluados: 4950792
+Expandidos: 3533903
+10.13user 0.00system 0:10.12elapsed 100%CPU (0avgtext+0avgdata 2648maxresident)k
+0inputs+0outputs (0major+111minor)pagefaults 0swaps
+./main 4 18
+Resultado de nega scout: 0
+Evaluados: 26574219
+Expandidos: 18742330
+55.14user 0.00system 0:55.10elapsed 100%CPU (0avgtext+0avgdata 2704maxresident)k
+0inputs+0outputs (0major+111minor)pagefaults 0swaps
+./main 4 19
+Resultado de nega scout: 18
+Evaluados: 77521342
+Expandidos: 55162098
+158.32user 0.00system 2:38.19elapsed 100%CPU (0avgtext+0avgdata 2704maxresident)k
+0inputs+0outputs (0major+113minor)pagefaults 0swaps
+./main 4 20
+Resultado de nega scout: -3
+Evaluados: 133533483
+Expandidos: 95745149
+278.91user 0.00system 4:38.69elapsed 100%CPU (0avgtext+0avgdata 2664maxresident)k
+0inputs+0outputs (0major+111minor)pagefaults 0swaps
+./main 4 21
+Resultado de nega scout: 33
+Evaluados: 7700733
+Expandidos: 5335687
+16.06user 0.00system 0:16.05elapsed 100%CPU (0avgtext+0avgdata 2700maxresident)k
+0inputs+0outputs (0major+113minor)pagefaults 0swaps
