@@ -60,6 +60,41 @@ int negamax(state_t s, int depth, bool color){
     return bestValue;
 }
 
+int negamaxAB(state_t s, int depth, int alpha, int beta, bool color){
+    int player = color ? 1 : -1;
+    //s.terminal() ? cout << "si es terminal" : cout << "nope";
+    if(depth == 0 || s.terminal())
+        return player * s.value();
+
+    int bestValue = INT_MIN;
+    int value;
+    std::vector<int> childNodes = s.get_children(color);
+    //cout << "Size c: " << childNodes.size();
+
+    if(childNodes.size() <= 0)
+        return -negamaxAB(s, depth - 1, -beta, -alpha, !color);
+    else
+    {
+        expandidos++;
+        for(int i = 0; i < childNodes.size(); i++)
+        {
+            state_t new_s = s.move(color, childNodes[i]);
+
+            //cout << "depth: " << depth;
+            //s.terminal() ? cout << "si es terminal" : cout << "nope";
+            //s.print(cout, depth);
+            value = -negamaxAB(new_s, depth - 1, -beta, -alpha, !color);
+            evaluados++;
+            bestValue = MAX(bestValue, value);
+            alpha = MAX(alpha,value);
+            if (alpha >= beta)
+                break;
+        }
+    }
+
+    return bestValue;
+}
+
 /* max = color, if !max then its min */
 int test(state_t s, int depth, int value, bool color){
     if(depth == 0 || s.terminal()) return s.value() > value;
@@ -67,7 +102,7 @@ int test(state_t s, int depth, int value, bool color){
     std::vector<int> childNodes = s.get_children(color);
 
     if(childNodes.size() <= 0)
-        return color;
+            return color;
 
     else{
         bool t;
@@ -150,6 +185,8 @@ int main(int argc, const char **argv) {
                 //cout << "Resultado de Negamax: " << result << endl;
                 break;
             case(2):
+                result = seed * negamaxAB(state, depth, INT_MIN, INT_MAX, player);
+                cout << "Resultado de Negamax alpha-beta: " << result << "\nEvaluados: " << evaluados<< "\nExpandidos: " << expandidos<< endl;
                 break;
             case(3):
                 result = scout(state, 33 - depth, player);

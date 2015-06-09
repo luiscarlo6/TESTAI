@@ -1,0 +1,97 @@
+	luiscarlo@Felurian:~/ia$ ./run.sh 3 33
+./main 3 1
+Resultado de Negamax: -4
+Evaluados: 1
+Expandidos: 1
+0.00user 0.00system 0:00.00elapsed 0%CPU (0avgtext+0avgdata 2560maxresident)k
+0inputs+0outputs (0major+110minor)pagefaults 0swaps
+./main 3 2
+Resultado de Negamax: -4
+Evaluados: 4
+Expandidos: 3
+0.00user 0.00system 0:00.00elapsed 0%CPU (0avgtext+0avgdata 2700maxresident)k
+0inputs+0outputs (0major+111minor)pagefaults 0swaps
+./main 3 3
+Resultado de Negamax: -4
+Evaluados: 4
+Expandidos: 3
+0.00user 0.00system 0:00.00elapsed 0%CPU (0avgtext+0avgdata 2644maxresident)k
+0inputs+0outputs (0major+110minor)pagefaults 0swaps
+./main 3 4
+Resultado de Negamax: -4
+Evaluados: 15
+Expandidos: 10
+0.00user 0.00system 0:00.00elapsed 0%CPU (0avgtext+0avgdata 2660maxresident)k
+0inputs+0outputs (0major+110minor)pagefaults 0swaps
+./main 3 5
+Resultado de Negamax: -4
+Evaluados: 16
+Expandidos: 11
+0.00user 0.00system 0:00.00elapsed 0%CPU (0avgtext+0avgdata 2688maxresident)k
+0inputs+0outputs (0major+111minor)pagefaults 0swaps
+./main 3 6
+Resultado de Negamax: -4
+Evaluados: 135
+Expandidos: 90
+0.00user 0.00system 0:00.00elapsed 0%CPU (0avgtext+0avgdata 2676maxresident)k
+0inputs+0outputs (0major+111minor)pagefaults 0swaps
+./main 3 7
+Resultado de Negamax: -4
+Evaluados: 136
+Expandidos: 91
+0.00user 0.00system 0:00.00elapsed 0%CPU (0avgtext+0avgdata 2600maxresident)k
+0inputs+0outputs (0major+111minor)pagefaults 0swaps
+./main 3 8
+Resultado de Negamax: -4
+Evaluados: 859
+Expandidos: 578
+0.00user 0.00system 0:00.00elapsed 0%CPU (0avgtext+0avgdata 2644maxresident)k
+0inputs+0outputs (0major+111minor)pagefaults 0swaps
+./main 3 9
+Resultado de Negamax: 2
+Evaluados: 4174
+Expandidos: 2763
+0.00user 0.00system 0:00.00elapsed 100%CPU (0avgtext+0avgdata 2688maxresident)k
+0inputs+0outputs (0major+112minor)pagefaults 0swaps
+./main 3 10
+Resultado de Negamax: 2
+Evaluados: 12706
+Expandidos: 8519
+0.02user 0.00system 0:00.02elapsed 100%CPU (0avgtext+0avgdata 2600maxresident)k
+0inputs+0outputs (0major+112minor)pagefaults 0swaps
+./main 3 11
+Resultado de Negamax: 4
+Evaluados: 62585
+Expandidos: 42022
+0.11user 0.00system 0:00.11elapsed 97%CPU (0avgtext+0avgdata 2648maxresident)k
+0inputs+0outputs (0major+112minor)pagefaults 0swaps
+./main 3 12
+Resultado de Negamax: 4
+Evaluados: 538507
+Expandidos: 356521
+1.00user 0.00system 0:01.00elapsed 99%CPU (0avgtext+0avgdata 2656maxresident)k
+0inputs+0outputs (0major+109minor)pagefaults 0swaps
+./main 3 13
+Resultado de Negamax: 6
+Evaluados: 2021641
+Expandidos: 1338489
+3.74user 0.00system 0:03.74elapsed 100%CPU (0avgtext+0avgdata 2700maxresident)k
+0inputs+0outputs (0major+113minor)pagefaults 0swaps
+./main 3 14
+Resultado de Negamax: -12
+Evaluados: 10094161
+Expandidos: 6674586
+18.78user 0.00system 0:18.77elapsed 100%CPU (0avgtext+0avgdata 2688maxresident)k
+0inputs+0outputs (0major+110minor)pagefaults 0swaps
+./main 3 15
+Resultado de Negamax: 10
+Evaluados: 84069244
+Expandidos: 55184061
+156.80user 0.00system 2:36.69elapsed 100%CPU (0avgtext+0avgdata 2644maxresident)k
+0inputs+0outputs (0major+111minor)pagefaults 0swaps
+./main 3 16
+Resultado de Negamax: 0
+Evaluados: 461764655
+Expandidos: 303378328
+871.67user 0.04system 14:31.23elapsed 100%CPU (0avgtext+0avgdata 2700maxresident)k
+0inputs+0outputs (0major+111minor)pagefaults 0swaps
