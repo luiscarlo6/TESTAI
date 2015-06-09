@@ -106,11 +106,14 @@ int test(state_t s, int depth, int value, bool color){
 
     else{
         bool t;
+        expandidos++;
         for(int i = 0; i < childNodes.size(); ++i){
             state_t new_s = s.move(color, childNodes[i]);
             t = test(new_s, depth - 1, value, !color);
+            evaluados++;
+
             if(color && t) return true;
-            
+
             if(!color && !t) return false;
 
             return color ? true : false;
@@ -124,16 +127,21 @@ int scout(state_t s, int depth, bool color){
 
     int score = 0;
     std::vector<int> childNodes = s.get_children(color);
-
+    expandidos++;
     for(int i = 0; i < childNodes.size(); ++i){
         state_t new_s = s.move(color, childNodes[i]);
-        if(childNodes[i] == childNodes[0]) 
+        if(childNodes[i] == childNodes[0]) {
+            evaluados++;
             score = scout(new_s, depth -1, !color);
-        else{
-            if(color && test(new_s, depth - 1, score, true)) 
+        }else{
+            if(color && test(new_s, depth - 1, score, true)){
                 score = scout(new_s, depth - 1, !color);
-            if(!color && test(new_s, depth - 1, score, false))
+                evaluados++;
+            }
+            if(!color && test(new_s, depth - 1, score, false)){
                 score = scout(new_s, depth - 1, !color);
+                evaluados++;
+            }
         }
     }
     return score;
@@ -145,16 +153,18 @@ int negaScout(state_t s, int depth, int alpha, int beta, bool color){
     int b = beta;
     int a;
     std::vector<int> childNodes = s.get_children(color);
+    expandidos++;
     for(int i = 0; i < childNodes.size(); ++i){
         state_t new_s = s.move(color, childNodes[i]);
         a = -negaScout(new_s, depth - 1, -beta, -alpha, !color);
-        
+        evaluados++;
         if(a > alpha) alpha = a;
 
         if(alpha >= beta) return beta;
 
-        if(apha >= b){
+        if(alpha >= b){
             alpha = -negaScout(new_s, depth - 1, -beta, -alpha, !color);
+            evaluados++;
             if(alpha >= beta) return alpha;
         b = alpha + 1;
         }
