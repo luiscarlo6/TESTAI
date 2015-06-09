@@ -223,10 +223,11 @@ int main(int argc, const char **argv) {
                 break;
             case(3):
                 result = scout(state, 33 - depth, player);
-                cout << "Resultado de scout: " << result << endl;
+                cout << "Resultado de scout: " << result << "\nEvaluados: " << evaluados<< "\nExpandidos: " << expandidos<< endl;
                 break;
             case(4):
                 result = negaScout(state, 33 - depth, INT_MIN, INT_MAX, player);
+                cout << "Resultado de nega scout: " << result << "\nEvaluados: " << evaluados<< "\nExpandidos: " << expandidos<< endl;
                 break;
         }
 
