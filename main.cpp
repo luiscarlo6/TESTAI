@@ -95,6 +95,50 @@ int negamaxAB(state_t s, int depth, int alpha, int beta, bool color){
     return bestValue;
 }
 
+
+int negaScout(state_t s, int depth, int alpha, int beta, bool color){
+    int player = color ? 1 : -1;
+    //s.terminal() ? cout << "si es terminal" : cout << "nope";
+    if(depth == 0 || s.terminal())
+        return player * s.value();
+
+    int bestValue = beta;
+    int value;
+    bool first_child = true;
+    std::vector<int> childNodes = s.get_children(color);
+    //cout << "Size c: " << childNodes.size();
+
+    if(childNodes.size() <= 0)
+        return -negaScout(s, depth - 1, -beta, -alpha, !color);
+    else
+    {
+        expandidos++;
+        for(int i = 0; i < childNodes.size(); ++i)
+        {
+            state_t new_s = s.move(color, childNodes[i]);
+            if (!first_child){
+                first_child = false;
+                value = -negaScout(new_s, depth - 1, -alpha-1, -alpha, !color);
+                evaluados++;
+                if (value > alpha && value < beta)
+                {
+                    value = -negaScout(new_s, depth - 1, -beta, -value, !color);
+                    evaluados++;
+                }
+            }
+            else{
+                value = -negaScout(new_s, depth - 1, -beta, -alpha, !color);
+                evaluados++;
+            }
+            alpha = MAX(alpha,value);
+
+            if (alpha >= beta)
+                break;            
+        }
+    }
+    return alpha;
+}
+
 /* max = color, if !max then its min */
 int test(state_t s, int depth, int value, bool color){
     if(depth == 0 || s.terminal()) return s.value() > value;
@@ -147,30 +191,6 @@ int scout(state_t s, int depth, bool color){
     return score;
 }
 
-int negaScout(state_t s, int depth, int alpha, int beta, bool color){
-    if(depth == 0 || s.terminal()) return s.value();
-
-    int b = beta;
-    int a;
-    std::vector<int> childNodes = s.get_children(color);
-    expandidos++;
-    for(int i = 0; i < childNodes.size(); ++i){
-        state_t new_s = s.move(color, childNodes[i]);
-        a = -negaScout(new_s, depth - 1, -beta, -alpha, !color);
-        evaluados++;
-        if(a > alpha) alpha = a;
-
-        if(alpha >= beta) return beta;
-
-        if(alpha >= b){
-            alpha = -negaScout(new_s, depth - 1, -beta, -alpha, !color);
-            evaluados++;
-            if(alpha >= beta) return alpha;
-        b = alpha + 1;
-        }
-    }
-    return alpha;
-}
 
 int help(){
     cout << "Número invalido de argumentos o argumentos incorrectos, por favor ejecute de la forma: ";
@@ -226,7 +246,7 @@ int main(int argc, const char **argv) {
                 cout << "Resultado de scout: " << result << "\nEvaluados: " << evaluados<< "\nExpandidos: " << expandidos<< endl;
                 break;
             case(4):
-                result = negaScout(state, 33 - depth, INT_MIN, INT_MAX, player);
+                result = seed * negaScout(state, depth, INT_MIN, INT_MAX, player);
                 cout << "Resultado de nega scout: " << result << "\nEvaluados: " << evaluados<< "\nExpandidos: " << expandidos<< endl;
                 break;
         }
