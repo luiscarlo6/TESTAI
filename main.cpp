@@ -140,29 +140,28 @@ int negaScout(state_t s, int depth, int alpha, int beta, bool color){
 }
 
 /* max = color, if !max then its min */
-int test(state_t s, int depth, int value, bool color){
-    if(depth == 0 || s.terminal()) return s.value() > value;
-
-    std::vector<int> childNodes = s.get_children(color);
-
-    if(childNodes.size() <= 0)
-            return color;
-
-    else{
-        bool t;
-        expandidos++;
-        for(int i = 0; i < childNodes.size(); ++i){
-            state_t new_s = s.move(color, childNodes[i]);
-            t = test(new_s, depth - 1, value, !color);
-            evaluados++;
-
-            if(color && t) return true;
-
-            if(!color && !t) return false;
-
-            return color ? true : false;
-        }
+int test(state_t s, int depth, int value, bool max, bool player, bool operand){
+    if(depth == 0 || s.terminal()) {
+        if(operand)
+            return s.value() > value;
+        else
+            return s.value() >= value;
     }
+
+    std::vector<int> childNodes = s.get_children(player);
+
+    bool t;
+    expandidos++;
+    for(int i = 0; i < childNodes.size(); ++i){
+        state_t new_s = s.move(player, childNodes[i]);
+        t = test(new_s, depth - 1, value, !max, !player, true);
+        evaluados++;
+
+        if(max && t) return true;
+
+        if(!max && !t) return false;
+    }
+    return max ? false : true;
 
 }
 
@@ -172,19 +171,23 @@ int scout(state_t s, int depth, bool color){
     int score = 0;
     std::vector<int> childNodes = s.get_children(color);
     expandidos++;
-    for(int i = 0; i < childNodes.size(); ++i){
-        state_t new_s = s.move(color, childNodes[i]);
-        if(childNodes[i] == childNodes[0]) {
-            evaluados++;
-            score = scout(new_s, depth -1, !color);
-        }else{
-            if(color && test(new_s, depth - 1, score, true)){
-                score = scout(new_s, depth - 1, !color);
+    if(childNodes.size() <= 0)
+        score = scout(s, depth -1, !color);
+    else{
+        for(int i = 0; i < childNodes.size(); ++i){
+            state_t new_s = s.move(color, childNodes[i]);
+            if(childNodes[i] == childNodes[0]) {
                 evaluados++;
-            }
-            if(!color && test(new_s, depth - 1, score, false)){
-                score = scout(new_s, depth - 1, !color);
-                evaluados++;
+                score = scout(new_s, depth -1, !color);
+            }else{
+                if(color && test(new_s, depth - 1, score, !color, !color, true)){
+                    score = scout(new_s, depth - 1, !color);
+                    evaluados++;
+                }
+                if(!color && !test(new_s, depth - 1, score, !color, !color, false)){
+                    score = scout(new_s, depth - 1, !color);
+                    evaluados++;
+                }
             }
         }
     }
