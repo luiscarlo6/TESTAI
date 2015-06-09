@@ -1,97 +1,193 @@
-	luiscarlo@Felurian:~/ia$ ./run.sh 3 33
+luiscarlo@Felurian:~/ia$ ./run.sh 3 33
 ./main 3 1
-Resultado de Negamax: -4
+Resultado de scout: -4
 Evaluados: 1
 Expandidos: 1
 0.00user 0.00system 0:00.00elapsed 0%CPU (0avgtext+0avgdata 2560maxresident)k
-0inputs+0outputs (0major+110minor)pagefaults 0swaps
+0inputs+0outputs (0major+109minor)pagefaults 0swaps
 ./main 3 2
-Resultado de Negamax: -4
-Evaluados: 4
+Resultado de scout: -4
+Evaluados: 3
 Expandidos: 3
-0.00user 0.00system 0:00.00elapsed 0%CPU (0avgtext+0avgdata 2700maxresident)k
-0inputs+0outputs (0major+111minor)pagefaults 0swaps
-./main 3 3
-Resultado de Negamax: -4
-Evaluados: 4
-Expandidos: 3
-0.00user 0.00system 0:00.00elapsed 0%CPU (0avgtext+0avgdata 2644maxresident)k
-0inputs+0outputs (0major+110minor)pagefaults 0swaps
-./main 3 4
-Resultado de Negamax: -4
-Evaluados: 15
-Expandidos: 10
-0.00user 0.00system 0:00.00elapsed 0%CPU (0avgtext+0avgdata 2660maxresident)k
-0inputs+0outputs (0major+110minor)pagefaults 0swaps
-./main 3 5
-Resultado de Negamax: -4
-Evaluados: 16
-Expandidos: 11
-0.00user 0.00system 0:00.00elapsed 0%CPU (0avgtext+0avgdata 2688maxresident)k
-0inputs+0outputs (0major+111minor)pagefaults 0swaps
-./main 3 6
-Resultado de Negamax: -4
-Evaluados: 135
-Expandidos: 90
 0.00user 0.00system 0:00.00elapsed 0%CPU (0avgtext+0avgdata 2676maxresident)k
 0inputs+0outputs (0major+111minor)pagefaults 0swaps
+./main 3 3
+Resultado de scout: -4
+Evaluados: 3
+Expandidos: 4
+0.00user 0.00system 0:00.00elapsed 0%CPU (0avgtext+0avgdata 2668maxresident)k
+0inputs+0outputs (0major+110minor)pagefaults 0swaps
+./main 3 4
+Resultado de scout: -4
+Evaluados: 16
+Expandidos: 16
+0.00user 0.00system 0:00.00elapsed 0%CPU (0avgtext+0avgdata 2692maxresident)k
+0inputs+0outputs (0major+111minor)pagefaults 0swaps
+./main 3 5
+Resultado de scout: -4
+Evaluados: 17
+Expandidos: 17
+0.00user 0.00system 0:00.00elapsed 0%CPU (0avgtext+0avgdata 2604maxresident)k
+0inputs+0outputs (0major+111minor)pagefaults 0swaps
+./main 3 6
+Resultado de scout: 6
+Evaluados: 109
+Expandidos: 94
+0.00user 0.00system 0:00.00elapsed 0%CPU (0avgtext+0avgdata 2616maxresident)k
+0inputs+0outputs (0major+111minor)pagefaults 0swaps
 ./main 3 7
-Resultado de Negamax: -4
-Evaluados: 136
-Expandidos: 91
+Resultado de scout: 6
+Evaluados: 110
+Expandidos: 95
 0.00user 0.00system 0:00.00elapsed 0%CPU (0avgtext+0avgdata 2600maxresident)k
 0inputs+0outputs (0major+111minor)pagefaults 0swaps
 ./main 3 8
-Resultado de Negamax: -4
-Evaluados: 859
-Expandidos: 578
-0.00user 0.00system 0:00.00elapsed 0%CPU (0avgtext+0avgdata 2644maxresident)k
+Resultado de scout: 6
+Evaluados: 356
+Expandidos: 317
+0.00user 0.00system 0:00.00elapsed 0%CPU (0avgtext+0avgdata 2664maxresident)k
 0inputs+0outputs (0major+111minor)pagefaults 0swaps
 ./main 3 9
-Resultado de Negamax: 2
-Evaluados: 4174
-Expandidos: 2763
-0.00user 0.00system 0:00.00elapsed 100%CPU (0avgtext+0avgdata 2688maxresident)k
-0inputs+0outputs (0major+112minor)pagefaults 0swaps
+Resultado de scout: 4
+Evaluados: 915
+Expandidos: 793
+0.00user 0.00system 0:00.00elapsed 66%CPU (0avgtext+0avgdata 2696maxresident)k
+0inputs+0outputs (0major+111minor)pagefaults 0swaps
 ./main 3 10
-Resultado de Negamax: 2
-Evaluados: 12706
-Expandidos: 8519
-0.02user 0.00system 0:00.02elapsed 100%CPU (0avgtext+0avgdata 2600maxresident)k
-0inputs+0outputs (0major+112minor)pagefaults 0swaps
+Resultado de scout: 4
+Evaluados: 2045
+Expandidos: 1830
+0.00user 0.00system 0:00.00elapsed 100%CPU (0avgtext+0avgdata 2604maxresident)k
+0inputs+0outputs (0major+111minor)pagefaults 0swaps
 ./main 3 11
-Resultado de Negamax: 4
-Evaluados: 62585
-Expandidos: 42022
-0.11user 0.00system 0:00.11elapsed 97%CPU (0avgtext+0avgdata 2648maxresident)k
+Resultado de scout: 4
+Evaluados: 3736
+Expandidos: 3179
+0.01user 0.00system 0:00.01elapsed 92%CPU (0avgtext+0avgdata 2628maxresident)k
 0inputs+0outputs (0major+112minor)pagefaults 0swaps
 ./main 3 12
-Resultado de Negamax: 4
-Evaluados: 538507
-Expandidos: 356521
-1.00user 0.00system 0:01.00elapsed 99%CPU (0avgtext+0avgdata 2656maxresident)k
-0inputs+0outputs (0major+109minor)pagefaults 0swaps
+Resultado de scout: 4
+Evaluados: 35576
+Expandidos: 29963
+0.07user 0.00system 0:00.07elapsed 96%CPU (0avgtext+0avgdata 2696maxresident)k
+0inputs+0outputs (0major+111minor)pagefaults 0swaps
 ./main 3 13
-Resultado de Negamax: 6
-Evaluados: 2021641
-Expandidos: 1338489
-3.74user 0.00system 0:03.74elapsed 100%CPU (0avgtext+0avgdata 2700maxresident)k
+Resultado de scout: 6
+Evaluados: 101110
+Expandidos: 87194
+0.20user 0.00system 0:00.21elapsed 99%CPU (0avgtext+0avgdata 2704maxresident)k
 0inputs+0outputs (0major+113minor)pagefaults 0swaps
 ./main 3 14
-Resultado de Negamax: -12
-Evaluados: 10094161
-Expandidos: 6674586
-18.78user 0.00system 0:18.77elapsed 100%CPU (0avgtext+0avgdata 2688maxresident)k
-0inputs+0outputs (0major+110minor)pagefaults 0swaps
+Resultado de scout: -14
+Evaluados: 153664
+Expandidos: 128270
+0.31user 0.00system 0:00.31elapsed 100%CPU (0avgtext+0avgdata 2696maxresident)k
+0inputs+0outputs (0major+111minor)pagefaults 0swaps
 ./main 3 15
-Resultado de Negamax: 10
-Evaluados: 84069244
-Expandidos: 55184061
-156.80user 0.00system 2:36.69elapsed 100%CPU (0avgtext+0avgdata 2644maxresident)k
+Resultado de scout: 20
+Evaluados: 1131025
+Expandidos: 941838
+2.32user 0.00system 0:02.32elapsed 100%CPU (0avgtext+0avgdata 2664maxresident)k
 0inputs+0outputs (0major+111minor)pagefaults 0swaps
 ./main 3 16
-Resultado de Negamax: 0
-Evaluados: 461764655
-Expandidos: 303378328
-871.67user 0.04system 14:31.23elapsed 100%CPU (0avgtext+0avgdata 2700maxresident)k
+Resultado de scout: -2
+Evaluados: 3122936
+Expandidos: 2561670
+6.46user 0.00system 0:06.45elapsed 100%CPU (0avgtext+0avgdata 2688maxresident)k
+0inputs+0outputs (0major+110minor)pagefaults 0swaps
+./main 3 17
+Resultado de scout: -3
+Evaluados: 6688490
+Expandidos: 5424621
+13.83user 0.00system 0:13.82elapsed 100%CPU (0avgtext+0avgdata 2704maxresident)k
 0inputs+0outputs (0major+111minor)pagefaults 0swaps
+./main 3 18
+Resultado de scout: 0
+Evaluados: 12324245
+Expandidos: 7436593
+23.84user 0.00system 0:23.83elapsed 100%CPU (0avgtext+0avgdata 2648maxresident)k
+0inputs+0outputs (0major+110minor)pagefaults 0swaps
+./main 3 19
+Resultado de scout: 6
+Evaluados: 10847867
+Expandidos: 5392196
+20.59user 0.00system 0:20.57elapsed 100%CPU (0avgtext+0avgdata 2704maxresident)k
+0inputs+0outputs (0major+114minor)pagefaults 0swaps
+./main 3 20
+Resultado de scout: 0
+Evaluados: 5870814
+Expandidos: 2749390
+11.55user 0.00system 0:11.54elapsed 100%CPU (0avgtext+0avgdata 2600maxresident)k
+0inputs+0outputs (0major+111minor)pagefaults 0swaps
+./main 3 21
+Resultado de scout: -2
+Evaluados: 1104864
+Expandidos: 463413
+2.19user 0.00system 0:02.19elapsed 100%CPU (0avgtext+0avgdata 2704maxresident)k
+0inputs+0outputs (0major+111minor)pagefaults 0swaps
+./main 3 22
+Resultado de scout: 2
+Evaluados: 1303115
+Expandidos: 554882
+2.78user 0.00system 0:02.78elapsed 100%CPU (0avgtext+0avgdata 2664maxresident)k
+0inputs+0outputs (0major+109minor)pagefaults 0swaps
+./main 3 23
+Resultado de scout: 1
+Evaluados: 555190
+Expandidos: 203829
+1.12user 0.00system 0:01.12elapsed 99%CPU (0avgtext+0avgdata 2616maxresident)k
+0inputs+0outputs (0major+109minor)pagefaults 0swaps
+./main 3 24
+Resultado de scout: 0
+Evaluados: 337165
+Expandidos: 142778
+0.76user 0.00system 0:00.76elapsed 100%CPU (0avgtext+0avgdata 2648maxresident)k
+0inputs+0outputs (0major+111minor)pagefaults 0swaps
+./main 3 25
+Resultado de scout: -2
+Evaluados: 24902
+Expandidos: 10882
+0.06user 0.00system 0:00.06elapsed 100%CPU (0avgtext+0avgdata 2692maxresident)k
+0inputs+0outputs (0major+111minor)pagefaults 0swaps
+./main 3 26
+Resultado de scout: -4
+Evaluados: 13100
+Expandidos: 4899
+0.02user 0.00system 0:00.03elapsed 93%CPU (0avgtext+0avgdata 2604maxresident)k
+0inputs+0outputs (0major+112minor)pagefaults 0swaps
+./main 3 27
+Resultado de scout: -2
+Evaluados: 11018
+Expandidos: 3425
+0.02user 0.00system 0:00.02elapsed 86%CPU (0avgtext+0avgdata 2648maxresident)k
+0inputs+0outputs (0major+110minor)pagefaults 0swaps
+./main 3 28
+Resultado de scout: -6
+Evaluados: 3065
+Expandidos: 1089
+0.00user 0.00system 0:00.00elapsed 57%CPU (0avgtext+0avgdata 2624maxresident)k
+0inputs+0outputs (0major+111minor)pagefaults 0swaps
+./main 3 29
+Resultado de scout: -4
+Evaluados: 274
+Expandidos: 89
+0.00user 0.00system 0:00.00elapsed 0%CPU (0avgtext+0avgdata 2704maxresident)k
+0inputs+0outputs (0major+112minor)pagefaults 0swaps
+./main 3 30
+Resultado de scout: -2
+Evaluados: 32
+Expandidos: 21
+0.00user 0.00system 0:00.00elapsed ?%CPU (0avgtext+0avgdata 2700maxresident)k
+0inputs+0outputs (0major+113minor)pagefaults 0swaps
+./main 3 31
+Resultado de scout: -2
+Evaluados: 5
+Expandidos: 5
+0.00user 0.00system 0:00.00elapsed ?%CPU (0avgtext+0avgdata 2696maxresident)k
+0inputs+0outputs (0major+111minor)pagefaults 0swaps
+./main 3 32
+Resultado de scout: 0
+Evaluados: 1
+Expandidos: 1
+0.00user 0.00system 0:00.00elapsed ?%CPU (0avgtext+0avgdata 2688maxresident)k
+0inputs+0outputs (0major+110minor)pagefaults 0swaps
